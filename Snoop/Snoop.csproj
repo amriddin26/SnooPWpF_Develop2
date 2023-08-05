@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>$(MinTargetFramework)</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputType>WinExe</OutputType>
+    <UseWpf>true</UseWpf>
+
+    <ApplicationIcon>..\Artwork\Snoop.ico</ApplicationIcon>
+    <ApplicationManifest>../Shared/app.manifest</ApplicationManifest>
+    <StartupObject>Snoop.Program</StartupObject>
+  </PropertyGroup>
+
+  <!-- <PropertyGroup>
+    <PublishSingleFile>True</PublishSingleFile>
+  </PropertyGroup> -->
+
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="../Shared/app.manifest" />
+
+    <Resource Include="..\Artwork\*.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Snoop.InjectorLauncher\InjectorLauncherCommandLineOptions.cs" Link="InjectorLauncherCommandLineOptions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+     <ProjectReference Include="../Snoop.Core/Snoop.Core.csproj" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" />
+  </ItemGroup>
+</Project>

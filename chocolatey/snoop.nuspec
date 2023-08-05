@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>snoop</id>
+    <version>$Version$</version>
+    <title>Snoop</title>
+    <authors>Cory Plotts,Bastian Schmidt</authors>
+    <owners>cplotts,batzen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/snoopwpf/snoopwpf/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/snoopwpf/snoopwpf/</projectUrl>
+    <iconUrl>https://github.com/snoopwpf/snoopwpf/raw/master/Artwork/Snoop.ico</iconUrl>
+    <description>
+    Snoop allows you to spy/browse the visual tree of a running WPF application (without the need for a debugger) ... and change properties ... amongst other things.
+    The changelog for release versions can be found at https://github.com/snoopwpf/snoopwpf/blob/master/Changelog.md.
+    The changelog for preview versions can be found at https://github.com/snoopwpf/snoopwpf/blob/develop/Changelog.md.
+    </description>
+    <tags>snoop spy wpf</tags>
+  </metadata>
+  <files>
+    <file src="..\License.txt" target="tools\" />
+    <file src="tools\*" target="tools\" />
+    <file src="..\bin\$Configuration$\Scripts\*" target="tools\Scripts\" />
+
+    <file src="..\bin\$Configuration$\Snoop.Core*.config" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.Core*.dll" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.Core*.pdb" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.Core*.json" target="tools\" />
+
+    <file src="..\bin\$Configuration$\Snoop.exe" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.exe.config" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.pdb" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.com" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.com.config" target="tools\" />
+
+    <file src="..\bin\$Configuration$\CommandLine.dll" target="tools\" />
+    
+    <file src="..\bin\$Configuration$\net452\Snoop.Core*.config" target="tools\net452\" />
+    <file src="..\bin\$Configuration$\net452\Snoop.Core*.dll" target="tools\net452\" />
+    <file src="..\bin\$Configuration$\net452\Snoop.Core*.pdb" target="tools\net452\" />
+    <file src="..\bin\$Configuration$\net452\System.Management.Automation.dll" target="tools\net452\" />
+
+    <file src="..\bin\$Configuration$\netcoreapp3.1\Snoop.Core*.config" target="tools\netcoreapp3.1\" />
+    <file src="..\bin\$Configuration$\netcoreapp3.1\Snoop.Core*.dll" target="tools\netcoreapp3.1\" />
+    <file src="..\bin\$Configuration$\netcoreapp3.1\Snoop.Core*.pdb" target="tools\netcoreapp3.1\" />
+    <file src="..\bin\$Configuration$\netcoreapp3.1\Snoop.Core*.json" target="tools\netcoreapp3.1\" />
+
+    <file src="..\bin\$Configuration$\net5.0-windows\Snoop.Core*.config" target="tools\net5.0-windows\" />
+    <file src="..\bin\$Configuration$\net5.0-windows\Snoop.Core*.dll" target="tools\net5.0-windows\" />
+    <file src="..\bin\$Configuration$\net5.0-windows\Snoop.Core*.pdb" target="tools\net5.0-windows\" />
+    <file src="..\bin\$Configuration$\net5.0-windows\Snoop.Core*.json" target="tools\net5.0-windows\" />
+
+    <file src="..\bin\$Configuration$\Snoop.GenericInjector.*.dll" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.GenericInjector.*.pdb" target="tools\" />
+
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.x86.exe" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.x86.exe.config" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.x86.pdb" target="tools\" />
+
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.x64.exe" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.x64.exe.config" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.x64.pdb" target="tools\" />
+
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM.dll" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM.dll.config" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM.deps.json" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM.runtimeconfig.json" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM.exe" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM.pdb" target="tools\" />
+
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM64.dll" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM64.dll.config" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM64.deps.json" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM64.runtimeconfig.json" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM64.exe" target="tools\" />
+    <file src="..\bin\$Configuration$\Snoop.InjectorLauncher.ARM64.pdb" target="tools\" />
+
+    <file src="..\bin\$Configuration$\*.ignore" target="tools\" />
+    <file src="..\bin\$Configuration$\*.gui" target="tools\" />
+  </files>
+</package>

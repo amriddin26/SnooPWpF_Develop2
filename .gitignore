@@ -1,0 +1,36 @@
+
+Build/
+Intermediate/
+bin/
+obj/
+output/
+temp/
+artifacts/
+Debug/
+Release/
+packages/
+paket-files/
+.tmp/
+*.vs
+*.vscode
+*.user
+*.opensdf
+*.sdf
+*.suo
+*.pdb
+*.dll
+*.ncb
+.idea/
+*_wpftmp.csproj
+
+# Temp-Files from Verify
+*.received.txt
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Designer
+FAML.Designer.settings
+.nuke/build.schema.json

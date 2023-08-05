@@ -1,0 +1,15 @@
+﻿<Application x:Class="BasicTestHarness.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Window1.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BlahStyle"
+                   TargetType="{x:Type RichTextBox}" />
+            <!-- ReSharper disable once Xaml.StyleInvalidTargetType -->
+            <Style x:Key="BlahBlahStyle"
+                   TargetType="{x:Type TextBoxBase}"
+                   BasedOn="{StaticResource BlahStyle}" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

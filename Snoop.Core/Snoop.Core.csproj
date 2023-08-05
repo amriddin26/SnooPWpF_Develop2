@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFrameworks>net5.0-windows;netcoreapp3.1;$(MinTargetFramework)</TargetFrameworks>
+
+    <RootNamespace>Snoop</RootNamespace>
+
+    <UseWpf>true</UseWpf>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="..\Artwork\*.ico" />
+
+    <Content Include="Scripts\*.psm1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_WpfCommonNetFxReference Remove="System.Windows.Controls.Ribbon" />
+  </ItemGroup>
+
+  <ItemGroup Label="PowerShell">
+    <Reference Include="System.Configuration" Condition="'$(TargetFramework)' == '$(MinTargetFramework)'" />
+    <PackageReference Include="microsoft.powershell.3.referenceassemblies" PrivateAssets="All" Condition="'$(TargetFramework)' == '$(MinTargetFramework)'" />
+
+    <PackageReference Include="System.Management.Automation" PrivateAssets="All" Condition="'$(TargetFramework)' == 'netcoreapp3.1'" />
+    <PackageReference Include="System.Management.Automation" PrivateAssets="All" Condition="'$(TargetFramework)' == 'net5.0-windows'" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0-windows'">
+    <DefineConstants>$(DefineConstants);USE_WPF_BINDING_DIAG</DefineConstants>
+  </PropertyGroup>
+</Project>

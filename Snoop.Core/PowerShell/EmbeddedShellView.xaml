@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Snoop.PowerShell.EmbeddedShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Snoop.Core;component/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="TextBox"
+                   BasedOn="{StaticResource {x:Type TextBox}}">
+                <Setter Property="FontFamily" Value="Consolas" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Right">
+            <CheckBox x:Name="autoExpandCheckBox"
+                      IsChecked="True">
+                <TextBlock Text="Auto-expand" />
+                <CheckBox.ToolTip>
+                    <TextBlock MaxWidth="300"
+                               Text="Automatically expands the selected tree item when changed from the PowerShell provider."
+                               TextWrapping="Wrap" />
+                </CheckBox.ToolTip>
+            </CheckBox>
+        </StackPanel>
+        <TextBox x:Name="outputTextBox"
+                 Grid.Row="1"
+                 AcceptsReturn="True"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap" />
+        <TextBox x:Name="commandTextBox"
+                 Grid.Row="2">
+            <TextBox.ToolTip>
+                <StackPanel MaxWidth="300">
+                    <TextBlock Text="F5 - Reload Profile" />
+                    <TextBlock Text="F12 - Clear Output" />
+                </StackPanel>
+            </TextBox.ToolTip>
+        </TextBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+<node name="" displayName=" (StackPanel)" targetType="System.Windows.Controls.StackPanel">
+  <properties>
+    <property displayName="CanHorizontallyScroll" value="False" />
+    <property displayName="CanVerticallyScroll" value="False" />
+    <property displayName="Children" value="System.Windows.Controls.UIElementCollection" />
+    <property displayName="CommandBindings" value="System.Windows.Input.CommandBindingCollection" />
+    <property displayName="DefaultStyleKey" value="null" />
+    <property displayName="DependencyObjectType" value="System.Windows.DependencyObjectType" />
+    <property displayName="DesiredSize" value="0,0" />
+    <property displayName="Dispatcher" value="System.Windows.Threading.Dispatcher" />
+    <property displayName="ExtentHeight" value="0" />
+    <property displayName="ExtentWidth" value="0" />
+    <property displayName="HasAnimatedProperties" value="False" />
+    <property displayName="HasLogicalOrientationPublic" value="True" />
+    <property displayName="HorizontalOffset" value="0" />
+    <property displayName="InputBindings" value="System.Windows.Input.InputBindingCollection" />
+    <property displayName="IsArrangeValid" value="True" />
+    <property displayName="IsInitialized" value="True" />
+    <property displayName="IsInputMethodEnabled" value="True" />
+    <property displayName="IsLoaded" value="False" />
+    <property displayName="IsMeasureValid" value="False" />
+    <property displayName="IsSealed" value="False" />
+    <property displayName="IsVisible" value="False" />
+    <property displayName="LogicalOrientationPublic" value="Vertical" />
+    <property displayName="Parent" value="null" />
+    <property displayName="PersistId" value="0" />
+    <property displayName="RenderSize" value="0,0" />
+    <property displayName="Resources" value="System.Windows.ResourceDictionary" />
+    <property displayName="ScrollOwner" value="null" />
+    <property displayName="TemplatedParent" value="null" />
+    <property displayName="TouchesCaptured" value="System.Collections.Generic.List`1[System.Windows.Input.TouchDevice]" />
+    <property displayName="TouchesCapturedWithin" value="System.Collections.Generic.List`1[System.Windows.Input.TouchDevice]" />
+    <property displayName="TouchesDirectlyOver" value="System.Collections.Generic.List`1[System.Windows.Input.TouchDevice]" />
+    <property displayName="TouchesOver" value="System.Collections.Generic.List`1[System.Windows.Input.TouchDevice]" />
+    <property displayName="Triggers" value="System.Windows.TriggerCollection" />
+    <property displayName="VerticalOffset" value="0" />
+    <property displayName="ViewportHeight" value="0" />
+    <property displayName="ViewportWidth" value="0" />
+  </properties>
+</node>

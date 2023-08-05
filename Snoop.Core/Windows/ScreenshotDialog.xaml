@@ -1,0 +1,124 @@
+﻿<!--
+    (c) Copyright Cory Plotts.
+    This source is subject to the Microsoft Public License (Ms-PL).
+    Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+    All other rights reserved.
+-->
+<windows:SnoopBaseWindow x:Class="Snoop.Windows.ScreenshotDialog"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:snoop="clr-namespace:Snoop"
+                         xmlns:windows="clr-namespace:Snoop.Windows"
+                         Title="Save Screenshot"
+                         Width="400"
+                         Height="400"
+                         Padding="10"
+                         mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="PhotoFrameStyle"
+               TargetType="{x:Type ContentControl}"
+               BasedOn="{StaticResource {x:Type ContentControl}}">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ContentControl}">
+                            <Border Margin="10"
+                                    Padding="8"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    RenderTransformOrigin="0.5, 0.5">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="8"
+                                                      ShadowDepth="3"
+                                                      Opacity="0.6" />
+                                </Border.Effect>
+
+                                <Border BorderBrush="#55000000"
+                                        BorderThickness="1 1 0 0">
+                                    <Border BorderBrush="White"
+                                            BorderThickness="1 1 0 0">
+                                        <Viewbox Stretch="Uniform">
+                                            <Border Width="{Binding RenderSize.Width}"
+                                                    Height="{Binding RenderSize.Height}">
+                                                <Border.Background>
+                                                    <VisualBrush Stretch="Uniform"
+                                                                 Visual="{Binding}" />
+                                                </Border.Background>
+                                            </Border>
+                                        </Viewbox>
+                                    </Border>
+                                </Border>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ContentControl Style="{StaticResource PhotoFrameStyle}"
+                        DataContext="{Binding}" />
+
+        <Grid Grid.Row="1"
+              Margin="0 15 0 0">
+            <StackPanel Margin="5 0 0 5"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal">
+                <ComboBox x:Name="dpiBox"
+                          Grid.Column="1"
+                          Width="75"
+                          Margin="0 0 5 0"
+                          IsEditable="False">
+                    <ComboBoxItem>
+                        <TextBlock Text="96" />
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="150" />
+                    </ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">
+                        <TextBlock Text="300" />
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="600" />
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="1200" />
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="2400" />
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="4800" />
+                    </ComboBoxItem>
+                </ComboBox>
+                <TextBlock VerticalAlignment="Center"
+                           Text="DPI" />
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                <Button Width="75"
+                        Margin="0 0 5 5"
+                        Command="{x:Static windows:ScreenshotDialog.SaveCommand}"
+                        IsDefault="True">
+                    <TextBlock Text="Save" />
+                </Button>
+                <Button Width="75"
+                        Margin="0 0 5 5"
+                        Command="{x:Static windows:ScreenshotDialog.CancelCommand}"
+                        IsCancel="True">
+                    <TextBlock Text="Cancel" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</windows:SnoopBaseWindow>
